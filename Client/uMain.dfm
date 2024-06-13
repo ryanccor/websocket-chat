@@ -1,7 +1,7 @@
-object frmServer: TfrmServer
+object frmClient: TfrmClient
   Left = 0
   Top = 0
-  Caption = 'Server'
+  Caption = 'Client'
   ClientHeight = 442
   ClientWidth = 628
   Color = clBtnFace
@@ -32,15 +32,24 @@ object frmServer: TfrmServer
       OnClick = btnSendClick
       ExplicitLeft = 547
     end
-    object edtMessage: TEdit
+    object edtMessage: TRichEdit
       Left = 0
       Top = 0
       Width = 553
       Height = 50
       Align = alClient
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
-      ExplicitWidth = 547
-      ExplicitHeight = 23
+      OnKeyDown = edtMessageKeyDown
+      ExplicitLeft = 248
+      ExplicitTop = 16
+      ExplicitWidth = 185
+      ExplicitHeight = 89
     end
   end
   object pnlOptions: TPanel
@@ -63,8 +72,8 @@ object frmServer: TfrmServer
       Value = 0
     end
     object btnStart: TButton
-      Left = 6
-      Top = 65
+      Left = 8
+      Top = 94
       Width = 123
       Height = 25
       Caption = 'Start'
@@ -80,13 +89,21 @@ object frmServer: TfrmServer
       Text = '127.0.0.1'
     end
     object btnStop: TButton
-      Left = 6
-      Top = 96
+      Left = 8
+      Top = 125
       Width = 123
       Height = 25
       Caption = 'Stop'
       TabOrder = 3
       OnClick = btnStopClick
+    end
+    object edtUsername: TEdit
+      Left = 6
+      Top = 65
+      Width = 123
+      Height = 23
+      TabOrder = 4
+      Text = 'Username'
     end
   end
   object memConsole: TMemo

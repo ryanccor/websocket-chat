@@ -1,9 +1,9 @@
-object frmClient: TfrmClient
+object frmServer: TfrmServer
   Left = 0
   Top = 0
-  Caption = 'Client'
-  ClientHeight = 433
-  ClientWidth = 622
+  Caption = 'Server'
+  ClientHeight = 424
+  ClientWidth = 616
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object frmClient: TfrmClient
     Left = 0
     Top = 0
     Width = 137
-    Height = 375
+    Height = 366
     Align = alLeft
     BevelOuter = bvNone
     Color = clNavy
@@ -34,7 +34,7 @@ object frmClient: TfrmClient
     end
     object btnStart: TButton
       Left = 8
-      Top = 39
+      Top = 67
       Width = 123
       Height = 25
       Caption = 'Start'
@@ -43,62 +43,76 @@ object frmClient: TfrmClient
     end
     object btnStop: TButton
       Left = 8
-      Top = 72
+      Top = 100
       Width = 123
       Height = 25
       Caption = 'Stop'
       TabOrder = 2
       OnClick = btnStopClick
     end
+    object edtUsername: TEdit
+      Left = 10
+      Top = 38
+      Width = 121
+      Height = 23
+      TabOrder = 3
+      Text = 'Username'
+    end
   end
   object pnlConsole: TPanel
     Left = 137
     Top = 0
-    Width = 485
-    Height = 375
+    Width = 479
+    Height = 366
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
     object memConsole: TMemo
       Left = 0
       Top = 0
-      Width = 491
-      Height = 384
+      Width = 479
+      Height = 366
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 485
-      ExplicitHeight = 375
     end
   end
   object Panel1: TPanel
     Left = 0
-    Top = 375
-    Width = 622
+    Top = 366
+    Width = 616
     Height = 58
     Align = alBottom
     BevelOuter = bvNone
     Caption = 'Panel1'
     TabOrder = 2
-    object edtMessage: TEdit
-      Left = 0
-      Top = 0
-      Width = 553
-      Height = 58
-      Align = alClient
-      TabOrder = 0
-      ExplicitWidth = 547
-      ExplicitHeight = 23
-    end
     object btnSend: TButton
-      Left = 553
+      Left = 541
       Top = 0
       Width = 75
       Height = 58
       Align = alRight
       Caption = 'Send'
-      TabOrder = 1
+      TabOrder = 0
       OnClick = btnSendClick
-      ExplicitLeft = 547
+    end
+    object edtMessage: TRichEdit
+      Left = 0
+      Top = 0
+      Width = 541
+      Height = 58
+      Align = alClient
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnKeyDown = edtMessageKeyDown
+      ExplicitLeft = 120
+      ExplicitTop = 6
+      ExplicitWidth = 185
+      ExplicitHeight = 89
     end
   end
   object ServerSocket1: TServerSocket
@@ -108,7 +122,7 @@ object frmClient: TfrmClient
     OnClientConnect = ServerSocket1ClientConnect
     OnClientDisconnect = ServerSocket1ClientDisconnect
     OnClientRead = ServerSocket1ClientRead
-    Left = 56
-    Top = 104
+    Left = 568
+    Top = 8
   end
 end
